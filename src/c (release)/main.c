@@ -224,6 +224,8 @@ __interrupt void port_2_interrupt(void) {
 			perm_img_mode(rvasec_logo);
 		} else if (!(strcmp(output, "babs        "))) {
 			perm_img_mode(babs);
+		} else if (!(strcmp(output, "securabit   "))) {
+			perm_img_mode(securabit);
 		} else if (!(strcmp(output, "31337       "))) {
 			elite = 1;
 			prompt();
