@@ -217,13 +217,13 @@ __interrupt void port_2_interrupt(void) {
 // check to see if any codes were entered
 	if (mode == TEXT_INPUT_MODE) {
 		if (!(strcmp(output, "hackrva     "))) {
-			temp_img_mode(hackrva_logo);
+			perm_img_mode(hackrva_logo);
 		} else if (!(strcmp(output, "anonymous   "))) {
 			perm_img_mode(anonymous);
 		} else if (!(strcmp(output, "rvasec      "))) {
-			temp_img_mode(rvasec_logo);
+			perm_img_mode(rvasec_logo);
 		} else if (!(strcmp(output, "babs        "))) {
-			temp_img_mode(babs);
+			perm_img_mode(babs);
 		} else if (!(strcmp(output, "31337       "))) {
 			elite = 1;
 			prompt();
