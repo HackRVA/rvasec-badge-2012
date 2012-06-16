@@ -8,13 +8,13 @@
 #include <msp430.h>
 #include "pcd8544_for_msp430.h"
 #include "images.h"
-#include "string.h"
+//#include "string.h"
 
 // Interrupt status flags
 char mode = 0;
 char count = 0;
 unsigned int cursor_index = 0;
-char output[];
+char output[12];
 char blinky = 0;
 char input_seq[] = { 5, 5, 5, 5, 5, 5, 5, 5 };
 char elite = 0;
@@ -229,5 +229,15 @@ __interrupt void port_2_interrupt(void) {
 			prompt();
 		}
 	}
+}
 
+int strcmp(unsigned char *str1, unsigned char *str2){
+	int i;
+	char match = 0;
+	for(i = 0; i < 12; i++){
+		if(str1[i] != str2[i]){
+			match = 1;
+		}
+	}
+	return match;
 }
